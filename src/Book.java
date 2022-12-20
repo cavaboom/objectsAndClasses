@@ -35,6 +35,12 @@ public class Book {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return "Название книги - " +name+ ". Год издания - " +year;
+    }
+
+    @Override
     public boolean equals (Object o) {
         if (this == o)
             return true;
@@ -42,5 +48,9 @@ public class Book {
             return false;
         Book book = (Book) o;
         return year == book.year && Objects.equals(name, book.name) && author.equals(book.author);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(year, name, author);
     }
 }

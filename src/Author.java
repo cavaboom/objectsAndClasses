@@ -25,6 +25,12 @@ public class Author {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return  "Автор - " +firstName+ ' ' +lastName;
+    }
+
+    @Override
     public boolean equals (Object o) {
         if (this == o)
             return true;
@@ -32,5 +38,9 @@ public class Author {
             return false;
         Author author = (Author) o;
         return Objects.equals(firstName, author.firstName) && Objects.equals(lastName, author.lastName);
+    }
+
+    public int hashcode() {
+        return  Objects.hash(firstName, lastName);
     }
 }
